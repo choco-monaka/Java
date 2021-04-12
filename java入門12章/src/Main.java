@@ -1,11 +1,13 @@
 public class Main {
   public static void main(String[] args) {
 
-    Matango m1 = new Matango('A');
-    m1.hp = 50;
+    Character c  = new Wizard();
 
-    Matango m2 = new Matango('B');
-    m2.hp = 48;
+    Slime s = new Slime();
+    Monster m = new Slime();
+
+    s.run();
+    m.run();
 
   }
 }
