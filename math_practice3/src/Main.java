@@ -36,6 +36,30 @@ public class Main {
     // int sum1 = (n + 1) * (n / 2) + (n % 2 == 1 ? (n + 1) / 2 : 0); // 和
     // System.out.println("1から" + n + "までの和は" + sum1 + "です。");
 
+    // 問題3
+    int a3 = 0;
+    int b3 = 0;
+    int sum3 = 0;
+    System.out.println("------------問題3------------");
+    System.out.print("a3の値: ");
+    a3 = scanner.nextInt();
+    System.out.print("b3の値: ");
+    b3 = scanner.nextInt();
+
+    if (a3 < b3) {
+      for (int i = a3; i <= b3; i++) {
+        System.out.print(i + " ");
+        sum3 += i;
+      }
+      System.out.println("...." + a3 + "から" + b3 + "までの和は" + sum3 + "です");
+    } else if (b3 < a3) {
+      for (int i = b3; i <= a3; i++) {
+        System.out.print(i + " ");
+        sum3 += i;
+      }
+      System.out.println("...." + b3 + "から" + a3 + "までの和は" + sum3 + "です");
+    }
+
   }
 
 }
