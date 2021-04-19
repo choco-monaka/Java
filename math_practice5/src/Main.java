@@ -21,21 +21,21 @@ public class Main {
       System.out.println(""); // 改行目的
     }
 
-    // 問題2 n段の数字ピラミッド作成
-    System.out.print("何段の数字ピラミッドを作成しますか？: ");
-    int a2 = scanner.nextInt();
-    int y = 1;
+    // // 問題2 n段の数字ピラミッド作成
+    // System.out.print("何段の数字ピラミッドを作成しますか？: ");
+    // int a2 = scanner.nextInt();
+    // int y = 1;
 
-    for (int i = 1; i <= a2; i++) {
-      for (int x = 1; x <= a2 - i - 1; x++) {
-        System.out.print(" ");
-      }
-      for (int x = 1; x <= (i - 1) * 2 + 1; x++) {
-        System.out.print(y);
-      }
-      System.out.println(""); // 改行目的
-      y++;
-    }
+    // for (int i = 1; i <= a2; i++) {
+    // for (int x = 1; x <= a2 - i - 1; x++) {
+    // System.out.print(" ");
+    // }
+    // for (int x = 1; x <= (i - 1) * 2 + 1; x++) {
+    // System.out.print(y);
+    // }
+    // System.out.println(""); // 改行目的
+    // y++;
+    // }
 
   }
 }
