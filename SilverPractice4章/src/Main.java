@@ -1,89 +1,83 @@
+// import java.util.function.ObjIntConsumer;
+
 public class Main {
   public static void main(String[] args) {
 
-    // 3章問題
-    int num_2 = -10;
-    System.out.println(10 * -num_2); // -num_2 = - * -10 になる
+    // 4-4 初期化文で複数の変数を宣言する場合、変数は同じ型でないといけない
+    // for (int i_4 = 1, long j_4; i_4 < 5; i_4++) {
+    // System.out.println(i_4 * j_4);
+    // }
 
-    // 演算子の両方のオペランドは同じ型でないといけない。型が小さいものは自動的に大きいものに変換される
-    // 今回はLong型のほうが、大きいのに代入先がintになっている ↓
-    // int i_2 = 2 * 3L; コンパイルエラー
-    long i_2b = 2 * 3L;
-    System.out.println(i_2b);
-
-    // byte型は-128 ~ 127 の範囲
-    // short型は-32768 ~ 32767 の範囲
-
-    int var1 = 8;
-    int var2;
-    int var3 = 8;
-    int var4;
-
-    System.out.println("var1= " + var1);
-    var2 = var1++;
-    System.out.println("var1= " + var1);
-    System.out.println("var2= " + var2); // 8が出力される var1++ で先に8がvar2に代入された後 var1+1になる
-    System.out.println("var3= " + var3);
-    var4 = ++var3;
-    System.out.println("var3= " + var3); // 9が出力される ++var3 で先に1+var3が始まり、 ver4に9が代入され var3にも9が代入
-    System.out.println("var4= " + var4);
-
-    int b_6 = 10;
-    if (10 < b_6++) { // b_6++ の場合先に10 < 10の計算が始まる ++b_6だと先に1+10の計算が始まる
-      System.out.println("if文実行しました");
-    } else {
-      System.out.println("else文実行しました");
+    for (int i = 0, j = 0; i < 5 && j < 5; i++) { // 条件文を複数にする場合は倫理演算子を使う
+      System.out.println(i++); // さきにiが出力された後にi + 1の計算
+      j += i;
     }
 
-    // 3-8 同一判定
-    Sample s1_8 = new Sample(10);
-    Sample s2_8 = s1_8; // この段階では全く同じ同一だが、次の行で新たにインスタンスを作りs1_8に代入しているので、結果同一ではなくなる
-    s1_8 = new Sample(10);
-    System.out.println(s1_8 == s2_8);
-
-    // 3-9 同値判定
-    System.out.print("3-9問題: ");
-    Sample a_9 = new Sample(10, "a");
-    Sample b_9 = new Sample(10, "b");
-    System.out.println(a_9.equals(b_9));
-
-    // 3-11
-    Object a_11 = new Object();
-    Object b_11 = null;
-    System.out.println(a_11.equals(b_11)); // null以外の参照権xについてx.equals(null)はfalseを返すこと
-
-    // 3-12 3-13
-    System.out.println("---------3-12-----------");
-    String a_12 = "sample";
-    String b_12 = "sample";
-    System.out.println(a_12 == b_12); // コード中に同じ文字列リテラルが登場した場合、同じStringクラスへの参照が使いまわされる よって==演算子を使用して同一性を判定した場合｢true｣
-    System.out.println(a_12.equals(b_12));
-    // しかしnew演算子を使って明示的にインスタンスを作成した場合は異なる参照を持つ
-    String c_12 = new String("sample");
-    System.out.println(c_12 == b_12); // false
-    System.out.println(c_12.equals(b_12)); // true
-
-    // 3-14 internメソッドを使用して参照権を戻す
-    System.out.println("---------3-14-----------");
-    String str1_14 = new String("def");
-    String str2_14 = new String("def");
-    System.out.println(str1_14 == str2_14); // false
-    System.out.println(str1_14.intern() == str2_14.intern()); // true
-    System.out.println(str1_14.intern() == str2_14); // false
-    System.out.println(str1_14.intern() == "def"); // true
-
-    // 3-21 case式
-    int num_21 = 1;
-    switch (num_21) {
-    case 1: // num_21は｢1｣なので、この条件が当てはまる。しかしbreakがないのでそのまま全ての処理が実行される
-    case 2:
-    case 3:
-      System.out.println("A");
-    case 4:
-      System.out.println("B");
-    default:
-      System.out.println("C");
+    int array_9[][] = new int[][] { { 1, 2 }, { 2, 3, 4 } };
+    int total_9 = 0;
+    System.out.println(array_9.length); // 数は2つ
+    for (int i = 0; i < array_9.length; i++) {
+      for (int j = i; j < array_9[i].length; j++) {
+        total_9 += array_9[i][j];
+        System.out.print(array_9[i][j]);
+      }
     }
+    System.out.println("");
+    System.out.println(total_9);
+
+    // 4-11 2次元配列の拡張for文
+    String[][] array_11 = { { "A", "B", "C" } };
+    for (Object obj : array_11) {
+      System.out.println(obj); // エラーにならないコード
+    }
+
+    // 4-13 前置後置インクリメント while文
+    int num_13 = 10;
+    while (num_13++ <= 10) {
+      // 後置インクリメントによって、10 <= 10の判定が行われる。その後10+1実行.
+      // 2週目に12<=10の判定の後に、後置インクリメントによって12+1になる よって41行目に13出力
+      num_13++; // 11 + 1
+    }
+    System.out.println(num_13); // 13が出力される
+
+    int num_13_2 = 10;
+    do {
+      num_13_2++; // 10 + 1
+    } while (++num_13_2 < 10); // 前置インクリメントによって11 + 1が実行 その後12 < 10の判定
+    System.out.println(num_13_2); // 12が出力
+
+    // 4-15 continue文
+    int[] array_15 = { 1, 2, 3, 4, 5 };
+    int total_15 = 0;
+    for (int i : array_15) {
+      if (i % 2 == 0)
+        continue; // 条件に合ったときだけ処理をスキップする 2,4が対象
+      total_15 += i;
+    }
+    System.out.println(total_15);
+
+    // 4-16ラベル付きfor文
+    sample: for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        if (3 < j) {
+          System.out.println(j);
+          break sample; // 60行目 sampleついている最初のfor文のループを抜ける
+        }
+      }
+    }
+
+    // 4-17 さらに複雑なラベル付きfor文
+    int total_17 = 0;
+    a: for (int i = 0; i < 5; i++) {
+      b: for (int j = 0; j < 5; j++) {
+        if (i % 2 == 0)
+          continue a; // 条件にマッチするとaのループがスキップされる (例)iが0の場合 ラベルaの処理がスキップされ iが1の場合から始まる
+        if (3 < j)
+          break b; // 条件にマッチするとbの処理が終了する つまりjが4,5の場合total_17に加算されない。
+        total_17 += j;
+      }
+    }
+    System.out.println(total_17); // 12が出力される
 
   }
 }
