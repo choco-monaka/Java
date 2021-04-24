@@ -1,18 +1,27 @@
 
 public class Main {
   public static void main(String[] args) {
+    // 7章
+    // 7-2 継承していても｢コンストラクタ｣｢privateなメンバ｣は引き継げない
 
-    // ここから問題
-    // 1234567890 の正の約数のうち、500000以下のものを全て足し合わせたときの和を求める
-    int x = 1234567890;
-    int total = 0;
-    for (int i = 0; i < 500000; i++) {
-      if (x % i == 0) {
-        total = total + i;
-      }
-    }
+    // 7-4 interfaceにデフォルトメソッドを記述することで、インターフェースに実装を実現できるようになった
+    A a = new B();
+    a.sample(); // sample Aと出力される
 
-    System.out.println(total);
+    // 7-9
+    AbstractSample s_9 = new ConcreteSample();
+    s_9.sample(); // A B Cと出力される
+
+    // 7-13
+    Worker worker = new Engineer();
+    worker.work(); // workが出力される
+
+    // 7-19
+    Child child = new Child();
+    child.name = "sample";
+    System.out.println(child.getName()); // nullが出力される
+    // childクラスにもnameを定義していることで、nameはchildクラスを利用している
+    // しかし、getNameメソッドはparentクラスで戻り値はthis.name;よってここでのgetNameの戻り値はparentクラスのnameなのでnull
 
   }
 }
