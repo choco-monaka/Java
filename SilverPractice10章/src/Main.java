@@ -1,39 +1,50 @@
 public class Main {
   public static void main(String[] args) {
-    // 6章
+    // 10章
 
-    // 6-5
-    Sample.num5 = 10; // クラス名.フィールド名 にすることでstaticなフィールドにアクセスできる
-    Sample s_5 = new Sample();
-    Sample s2_5 = new Sample();
-    s_5.num5 += 10; // staticな領域にある１つの変数を更新し続けている
-    s2_5.num5 = 30;
-    System.out.println(Sample.num5); // 30が出力される
+    // 10-1
+    try {
+      int[] array_1 = {};
+      array_1[0] = 10;
+      System.out.println("finish");
+    } catch (ArrayIndexOutOfBoundsException e) {
+      System.out.println("error");
+    } finally {
+      System.out.println("例外処理の有無に関わらず、finallyは必ず実行される");
+    }
 
-    // 6-12
-    Sample s12 = new Sample();
-    double result12 = s12.divide12(10, 2); // sampleクラスのdivideメソッドで、戻り値をfloatにしている。よって左側互換性のあるdouble or float にする必要がある
-    System.out.println(result12);
+    // 10-5
+    System.out.println(test(null)); // AA B A の順番に出力 returnよりもfinallyのほうが優先度は高い
 
-    // 6-21
-    Sample s_21 = new Sample(); // B Aと出力される
+    // 10-6
+    int result_6 = sample();
+    System.out.println(result_6); // 20が出力される
 
-    // 6-22
-    System.out.println(Sample.num_22); // インスタンスを１つもない状態でこのコードを実行したら初期値である0が出力される
+    // 10-17
+    // main(args); 再帰呼び出ししている最終的に｢StackOverflowError｣が発生する
 
-    // 6-24
-    Sample s24 = new Sample();
   }
 
-  // 6-10 メソッド定義について
-  // アクセス修飾子 戻り値型 メソッド名(引数の型 引数名) { メソッドの処理; }
-  // 戻り値を使用する場合必ずreturn文と型を合わせる必要がある 戻り値を何も戻さない場合はvoidを使用する
-  int method_10(int num) {
-    return num * 2; // 2.0にすると演算結果がdoubleになるのでコンパイルエラー
-    // return System.out.println(num); コンパイルエラーになる
+  private static String test(Object obj) {
+    try {
+      System.out.println(obj.toString());
+    } catch (NullPointerException e) {
+      System.out.println("AA");
+      return "A";
+    } finally {
+      System.out.println("B");
+    }
+    return "C";
   }
 
-  void method_10_2(int num) {
-    System.out.println(num); // voidにすればok
+  private static int sample() {
+    try {
+      throw new RuntimeException();
+    } catch (RuntimeException e) {
+      return 10; // returnを戻す変数があるイメージなので、10が先に入った後に、20が代入される よって20
+    } finally {
+      return 20;
+    }
   }
+
 }
