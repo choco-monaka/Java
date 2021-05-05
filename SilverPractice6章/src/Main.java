@@ -3,7 +3,7 @@ public class Main {
     // 6章
 
     // 6-5
-    Sample.num5 = 10; // クラス名.フィールド名 にすることでstaticなフィールドにアクセスできる
+    Sample.num5 = 10; // クラス名.フィールド名 にすることでstaticなフィールドにアクセスできる。
     Sample s_5 = new Sample();
     Sample s2_5 = new Sample();
     s_5.num5 += 10; // staticな領域にある１つの変数を更新し続けている
