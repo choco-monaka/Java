@@ -18,5 +18,11 @@ public class Main {
       System.out.print(value + " ");
     }
 
+    int x = 0;
+    for (int i = 1; i <= 64; i++) {
+      x += i * i * i * i;
+    }
+    System.out.println(x);
+
   }
 }
