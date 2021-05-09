@@ -32,6 +32,7 @@ public class Main {
     int pos = -1;
     int lower = 0;
     int upper = a.length - 1;
+    // もう少し細かく動作できるようにする
     while (lower <= upper) {
       int mid = (lower + upper) / 2;
       if (a[mid] == x) {
