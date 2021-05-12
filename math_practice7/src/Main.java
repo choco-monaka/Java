@@ -50,5 +50,7 @@ public class Main {
       System.out.println(x + "は" + pos + "番目です");
     }
 
+    // ソーティング？
+
   }
 }
