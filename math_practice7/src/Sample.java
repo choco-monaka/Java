@@ -10,4 +10,8 @@ public class Sample {
     System.out.println(value);
   }
 
+  public void test(String value) {
+    System.out.println(value);
+  }
+
 }
