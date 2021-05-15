@@ -53,5 +53,8 @@ public class Main {
     Sample s = new Sample("sample");
     s.test();
 
+    int[] a;
+    a = new int[3];
+
   }
 }
