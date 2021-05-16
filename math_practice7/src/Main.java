@@ -59,6 +59,7 @@ public class Main {
     int a_3 = 3;
     int b_3 = a_3 += 5;
     System.out.println(a_3 + b_3);
+    System.out.println(a_3 + " " + b_3);
 
   }
 }
