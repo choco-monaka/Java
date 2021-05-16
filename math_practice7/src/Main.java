@@ -53,8 +53,12 @@ public class Main {
     Sample s = new Sample("sample");
     s.test();
 
-    int[] a;
+    int[] a_1;
     a = new int[3];
+
+    int a_3 = 3;
+    int b_3 = a_3 += 5;
+    System.out.println(a_3 + b_3);
 
   }
 }
