@@ -14,4 +14,8 @@ public class Sample {
     System.out.println(value);
   }
 
+  public void sample() {
+    //
+  }
+
 }
