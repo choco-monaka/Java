@@ -62,4 +62,8 @@ public class Main {
     System.out.println(a_3 + " " + b_3);
 
   }
+
+  private static void hello(String msg) {
+    msg.replaceAll("hoge", "hogehoge");
+  }
 }
