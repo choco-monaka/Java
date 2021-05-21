@@ -65,5 +65,10 @@ public class Main {
 
   private static void hello(String msg) {
     msg.replaceAll("hoge", "hogehoge");
+    msg.replace("hoge", "hogege");
+  }
+
+  private static void hello2(String msg) {
+    msg.replace("hoge", "hogege");
   }
 }
