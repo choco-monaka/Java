@@ -70,5 +70,6 @@ public class Main {
 
   private static void hello2(String msg) {
     msg.replace("hoge", "hogege");
+    msg.replaceFirst("hoge", replacement);
   }
 }
