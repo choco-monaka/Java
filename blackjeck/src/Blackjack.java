@@ -28,6 +28,37 @@ public class Blackjack {
 
   public static void main(String[] args) {
 
+    System.out.println("ゲーム開始");
+    // 空の山札作成
+
+    // 山札シャッフル
+
+    // プレイヤー・ディーラーの手札りすとを作成
+
+    // プレイヤー・ディーラーがカードを2枚引く
+
+    // 山札の進行状況を記録する変数deckCountを定義
+
+    // プレイヤーの手札枚数を記録する変数playerHandsを定義
+
+    // プレイヤー・ディーラーの手札のポイントを表示
+    System.out.println("あなたの1枚目のカードは" + toDescription(player.get(0)));
+    System.out.println("ディーラーの1枚目のカードは" + toDescription(dealer.get(0)));
+
+    System.out.println("あなたの2枚目のカードは" + toDescription(player.get(1)));
+    System.out.println("ディーラーの1枚目のカードは秘密です");
+
+    // プレイヤー・ディーラーのポイントを集計する
+    System.out.println("あなたの現在のポイントは" + playerPoint + "です。");
+
+    // プレイヤーがカードを引くフェーズ
+
+    // ディーラーのが手札を17以上にするまでカードを引くフェーズ
+
+    // ポイントを比較する
+    System.out.println("あなたのポイントは" + playerPoint);
+    System.out.println("ディーラーのポイントは" + dealerPoint);
+
   }
 
 }
