@@ -86,7 +86,7 @@ public class Blackjack {
     // 山札をシャッフル
     Collections.shuffle(deck);
 
-    // リストの中身を確認(デバック用)
+    // リストの中身を確認(デバック用のみ)
     /*
      * for (int i = 0; i < deck.size(); i++) { System.out.println(deck.get(i)); }
      */
