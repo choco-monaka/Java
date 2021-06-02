@@ -120,6 +120,18 @@ public class Blackjack {
 
   // 山札の数をスート(ハートやスペードなどのマーク)に置き換えるメソッド
   private static String toSuit(int cardNumber) {
+    switch ((cardNumber - 1) / 13) {
+      case 0:
+        return "グラブ";
+      case 1:
+        return "ダイヤ";
+      case 2:
+        return "ハート";
+      case 3:
+        return "スペード";
+      default:
+        return "例外です";
+    }
 
   }
 
