@@ -113,7 +113,8 @@ public class Blackjack {
 
   }
 
-  // カード番号をランク(AやJ.Q.K)に変換するメソッド
+  // カード番号をランク(AやJ.Q.K)に変換するメソッド.
+
   private static String toRank(int number) {
 
   }
