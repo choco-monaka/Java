@@ -119,7 +119,7 @@ public class Blackjack {
 
   }
 
-  // 山札の数をスート(ハートやスペードなどのマーク)に置き換えるメソッド
+  // 山札の数をスート(ハートやスペードなどのマーク)に置き換えるメソッド.
   private static String toSuit(int cardNumber) {
     switch ((cardNumber - 1) / 13) {
       case 0:
