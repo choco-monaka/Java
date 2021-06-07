@@ -132,6 +132,7 @@ public class Blackjack {
         return "スペード";
       default:
         return "例外です";
+        break
     }
 
   }
