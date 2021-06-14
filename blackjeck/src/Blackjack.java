@@ -75,7 +75,7 @@ public class Blackjack {
 
   }
 
-  // 山札(deck)に値を入れ、シャッフルするメソッド
+  // 山札(deck)に値を入れ、シャッフルするメソッドです
   private static void shuffleDeck(List<Integer> deck) {
 
     // リストに1-52の連番を代入
